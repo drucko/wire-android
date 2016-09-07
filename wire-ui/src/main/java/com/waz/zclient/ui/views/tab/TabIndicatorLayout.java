@@ -99,6 +99,13 @@ public class TabIndicatorLayout extends LinearLayout implements ViewPager.OnPage
         setLabels(labels);
     }
 
+    public void setLabelHeight(int height) {
+        ViewGroup.LayoutParams params = textViewContainer.getLayoutParams();
+        params.height = height;
+        textViewContainer.setLayoutParams(params);
+        textViewContainer.invalidate();
+    }
+
 
     public void setLabels(List<String> lables) {
         anchorPositions = new int[lables.size()];
